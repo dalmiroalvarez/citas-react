@@ -1,6 +1,6 @@
 // DE LA TORRE MALVADO TIENE SU COMPONENTE COMO 'PACIENTE.JSX' YO LO TENGO COMO 'PACIENTES.JSX'
 
-const Pacientes = ({paciente}) => {
+const Pacientes = ({paciente, setPaciente}) => {
 
   const {nombre, propietario, email, fecha, sintomas} = paciente
 
@@ -25,6 +25,18 @@ const Pacientes = ({paciente}) => {
       <p className="font-bold mb-3 text-gray-700 uppercase">Síntomas: {''}
         <span className="font-normal normal-case">{sintomas}</span>
       </p>
+
+      <div className="flex justify-between mt-5">
+          <button 
+            type="button"
+            className="py-2 px-10 bg-indigo-600 hover:bg-indigo-700 text-white font-bold uppercase rounded"
+            onClick={() => setPaciente(paciente)}
+          >Editar</button>
+            <button 
+            type="button"
+            className="py-2 px-10 bg-red-600 hover:bg-red-700 text-white font-bold uppercase rounded"
+          >Eliminar</button>
+      </div>
     </div>
     
     )
